@@ -18,15 +18,19 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - qtpy
 
 test:
   requires:
+    - pip
     - python {{ python_min }}
   imports:
     - qtmodern
+  commands:
+    - pip check
 
 about:
   home: https://github.com/gmarull/qtmodern
